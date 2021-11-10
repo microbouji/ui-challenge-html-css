@@ -1,0 +1,234 @@
+.navbar.container {
+  margin-bottom: 0;
+}
+
+.navbar nav {
+  display: flex;
+  height: 6.5em;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-menu-toggle {
+  padding: 0.625em;
+  margin-left: -0.625em;
+}
+
+.menu-toggle-icon {
+  display: block;
+  position: relative;
+  width: 1.875em;
+  height: 1.25em;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 40%,
+    #4b4b4b 40%,
+    #4b4b4b 55%,
+    transparent 55%,
+    transparent 100%
+  );
+}
+
+.menu-toggle-icon::before,
+.menu-toggle-icon::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 15%;
+  background-color: #4b4b4b;
+  will-change: transform;
+  transition: transform 300ms;
+}
+
+.menu-toggle-icon::before {
+  left: 0;
+  top: 0;
+}
+
+.menu-toggle-icon::after {
+  right: 0;
+  bottom: 5%;
+}
+
+.menu-visible .menu-toggle-icon::before {
+  transform: translate(100%);
+}
+
+.menu-visible .menu-toggle-icon::after {
+  transform: translate(-100%);
+}
+
+.logo {
+  width: 5.375em;
+  margin-right: auto;
+}
+
+.menu {
+  position: absolute;
+  top: 6.5em;
+  bottom: 0;
+  right: 100%;
+  width: 100vw;
+  z-index: 1100;
+  overflow: auto;
+  text-align: center;
+  background-color: white;
+  visibility: hidden;
+  will-change: transform, visibility;
+  transition: transform 200ms ease-out, visibility 200ms;
+}
+
+.menu.menu-visible {
+  visibility: visible;
+  transform: translate(100%);
+  transition: transform 250ms ease-in;
+}
+
+html.menu-visible,
+body.menu-visible {
+  height: 100%;
+  overflow: hidden;
+}
+
+.menu a {
+  display: block;
+  font-size: 2em;
+  padding: 0.625em;
+  font-weight: 500;
+  color: #4b4b4b;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+.btn-open-search {
+  padding: 0.25em;
+  margin-left: auto;
+}
+
+.btn-open-search svg {
+  width: 1.625em;
+  height: 1.625em;
+}
+
+.search-backdrop {
+  position: absolute;
+  z-index: 1110;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 104px;
+  background-color: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(0);
+  will-change: background-color, backdrop-filter;
+  transition: background-color 300ms, backdrop-filter 300ms;
+}
+
+.search-backdrop.search-visible {
+  background-color: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(10px);
+}
+
+.search {
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  pointer-events: auto;
+  visibility: hidden;
+  opacity: 0;
+  will-change: opacity, visibility;
+  transition: opacity 250ms cubic-bezier(0.165, 0.84, 0.44, 1), visibility 250ms;
+}
+
+.search-visible .search {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22),
+    visibility 250ms;
+}
+
+.search input[name="search"] {
+  -webkit-appearance: none;
+  border-radius: 0;
+  font-size: inherit;
+  height: 2.5em;
+  padding-left: 1em;
+  border: 2px solid #4b4b4b;
+  font-family: inherit;
+  width: 100%;
+}
+
+.btn-close-search {
+  font-size: 2.5em;
+  padding-left: 0.5em;
+  font-family: inherit;
+  color: #4b4b4b;
+}
+
+.cart {
+  padding: 0.25em;
+  margin-right: -0.25em;
+}
+
+.cart svg {
+  width: 1.6875em;
+  height: 1.6875em;
+}
+
+@media (min-width: 48em) {
+  .navbar nav,
+  .search-backdrop {
+    height: 7.875em;
+  }
+
+  .btn-menu-toggle {
+    display: none;
+  }
+
+  .menu {
+    position: static;
+    width: auto;
+    visibility: visible;
+    overflow: visible;
+    display: flex;
+  }
+
+  .menu.menu-visible {
+    transform: translate(0);
+    transition: none;
+  }
+
+  .menu a {
+    font-size: 1.625em;
+  }
+
+  .btn-close-search {
+    padding-right: 0.5em;
+    margin-right: 0.8em;
+  }
+
+  .search input[name="search"] {
+    width: 20em;
+  }
+}
+
+@media (min-width: 80em) {
+  .menu a {
+    font-size: 1.5em;
+    padding: 0.625em 1.25em;
+  }
+
+  .btn-open-search,
+  .cart {
+    padding: 0.4375em;
+  }
+
+  .cart {
+    margin-right: -0.4375em;
+  }
+}
