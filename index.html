@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="base.css" />
     <link rel="stylesheet" href="nav.css" />
+    <link rel="stylesheet" href="showcase.css" />
     <title>SHPX: Modern Interior for your Dream House</title>
   </head>
   <body>
@@ -91,11 +92,123 @@
       </div>
     </div>
 
-    <div class="container">
-      <div class="todo">
-        <h2>TODO: Showcase</h2>
+    <section class="container showcase" aria-label="Showcase">
+      <div class="slider">
+        <div class="slide" role="group" aria-labelledby="slide1-title">
+          <a class="slide-image" href="#">
+            <img
+              src="img/lamp.jpg"
+              sizes="(min-width: 48em) 63vw, 100vw"
+              srcset="
+                img/showcase/lamp-960w.jpg  960w,
+                img/showcase/lamp.jpg      1600w
+              "
+              alt="lamp photo"
+          /></a>
+          <div class="slide-text">
+            <h2 id="slide1-title">Lamp</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <p>
+              Photo by
+              <a
+                href="https://unsplash.com/@justindkauffman?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                >Justin Kauffman</a
+              >
+              on
+              <a
+                href="https://unsplash.com/photos/fpoHihXiMhg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                >Unsplash</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="slide" role="group" aria-labelledby="slide2-title">
+          <a class="slide-image" href="#"
+            ><img
+              src="img/chair.jpg"
+              sizes="@media (min-width: 48em) 65vw, 100vw"
+              srcset="
+                img/showcase/chair-960w.jpg  960w,
+                img/showcase/chair.jpg      1600w
+              "
+              alt="chair photo"
+          /></a>
+          <div class="slide-text">
+            <h2 id="slide2-title">Chair</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <p>
+              Photo by
+              <a
+                href="https://unsplash.com/@ninjason?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                >Jason Leung</a
+              >
+              on
+              <a
+                href="https://unsplash.com/photos/rjFSuf6fEc8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                >Unsplash</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="slide" aria-labelledby="slide3-title">
+          <a class="slide-image" href="#"
+            ><img
+              src="img/sofa.jpg"
+              sizes="@media (min-width: 48em) 65vw, 100vw"
+              srcset="
+                img/showcase/sofa-960w.jpg  960w,
+                img/showcase/sofa.jpg      1600w
+              "
+              alt="sofa photo"
+          /></a>
+          <div class="slide-text">
+            <h2 id="slide3-title">Sofa</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <p>
+              Photo by
+              <a
+                href="https://unsplash.com/@heftiba?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                >Toa Heftiba</a
+              >
+              on
+              <a
+                href="https://unsplash.com/photos/4t8_1MKvPd8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                >Unsplash</a
+              >
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
+
+      <div class="slider-controls">
+        <button class="btn-prev" tabindex="-1" aria-hidden="true">
+          <svg
+            viewBox="0 0 39 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.939339 10.9393C0.353554 11.5251 0.353554 12.4749 0.939339 13.0607L10.4853 22.6066C11.0711 23.1924 12.0208 23.1924 12.6066 22.6066C13.1924 22.0208 13.1924 21.0711 12.6066 20.4853L4.12132 12L12.6066 3.51472C13.1924 2.92893 13.1924 1.97918 12.6066 1.3934C12.0208 0.807611 11.0711 0.807611 10.4853 1.3934L0.939339 10.9393ZM39 10.5L2 10.5L2 13.5L39 13.5L39 10.5Z"
+              fill="#4B4B4B"
+            />
+          </svg>
+        </button>
+        <button class="btn-next" tabindex="-1" aria-hidden="true">
+          <svg
+            viewBox="0 0 39 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M38.0607 10.9393C38.6464 11.5251 38.6464 12.4749 38.0607 13.0607L28.5147 22.6066C27.9289 23.1924 26.9792 23.1924 26.3934 22.6066C25.8076 22.0208 25.8076 21.0711 26.3934 20.4853L34.8787 12L26.3934 3.51472C25.8076 2.92893 25.8076 1.97918 26.3934 1.3934C26.9792 0.807611 27.9289 0.807611 28.5147 1.3934L38.0607 10.9393ZM-1.11902e-08 10.5L37 10.5L37 13.5L1.11902e-08 13.5L-1.11902e-08 10.5Z"
+              fill="#4B4B4B"
+            />
+          </svg>
+        </button>
+      </div>
+    </section>
 
     <div class="container">
       <div class="quote">
@@ -106,5 +219,6 @@
     </div>
 
     <script src="nav.js"></script>
+    <script src="showcase.js"></script>
   </body>
 </html>
