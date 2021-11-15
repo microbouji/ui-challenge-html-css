@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="base.css" />
     <link rel="stylesheet" href="nav.css" />
     <link rel="stylesheet" href="showcase.css" />
+    <link rel="stylesheet" href="products.css" />
     <title>SHPX: Modern Interior for your Dream House</title>
   </head>
   <body>
@@ -86,10 +87,78 @@
       </div>
     </div>
 
-    <div class="container">
-      <div class="todo">
-        <h2>TODO: Products</h2>
+    <div role="main" class="container products">
+      <div class="products-heading">
+        <h2>Products</h2>
+        <div
+          role="radiogroup"
+          aria-label="Filter products"
+          aria-controls="products-list"
+        >
+          <input id="all" type="radio" name="category" value="All" checked />
+          <label for="all">All</label>
+
+          <input id="lamp" type="radio" name="category" value="Lamp" />
+          <label for="lamp">Lamp</label>
+
+          <input id="chair" type="radio" name="category" value="Chair" />
+          <label for="chair">Chair</label>
+
+          <input id="table" type="radio" name="category" value="Table" />
+          <label for="table">Table</label>
+
+          <input type="radio" id="sofa" name="category" value="Sofa" />
+          <label for="sofa">Sofa</label>
+        </div>
+
+        <select aria-controls="products-list">
+          <option value="All" selected>All</option>
+          <option value="Lamp">Lamp</option>
+          <option value="Chair">Chair</option>
+          <option value="Table">Table</option>
+          <option value="Sofa">Sofa</option>
+        </select>
       </div>
+
+      <ul
+        class="products-list"
+        id="products-list"
+        aria-live="polite"
+        aria-atomic="true"
+        aria-relevant="additions removals"
+      >
+        <li class="product" data-category="Chair">
+          <h2><a href="#">Chair</a></h2>
+          <h3>$18.00</h3>
+          <img src="img/products/chair.png" alt="Chair" />
+        </li>
+        <li class="product" data-category="Chair">
+          <h2><a href="#">Chair Two</a></h2>
+          <h3>$18.00</h3>
+          <img src="img/products/chair2.png" alt="Chair 2" />
+        </li>
+        <li class="product" data-category="Lamp">
+          <h2><a href="#">Lamp</a></h2>
+          <h3>$18.00</h3>
+          <img src="img/products/lamp.png" alt="Lamp" />
+        </li>
+
+        <li class="product" data-category="Chair">
+          <h2><a href="#">Chair Three</a></h2>
+          <h3>$18.00</h3>
+          <img src="img/products/chair3.png" alt="Chair 3" />
+        </li>
+        <li class="product" data-category="Table">
+          <h2><a href="#">Table</a></h2>
+          <h3>$18.00</h3>
+          <img src="img/products/table.png" alt="Table" />
+        </li>
+        <li class="product" data-category="Sofa">
+          <h2><a href="#">Sofa</a></h2>
+          <h3>$18.00</h3>
+          <img src="img/products/sofa.png" alt="Sofa" />
+        </li>
+      </ul>
     </div>
 
     <section class="container showcase" aria-label="Showcase">
@@ -220,5 +289,6 @@
 
     <script src="nav.js"></script>
     <script src="showcase.js"></script>
+    <script src="products.js"></script>
   </body>
 </html>
