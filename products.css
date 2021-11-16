@@ -107,11 +107,12 @@
   .products-heading [role="radiogroup"] {
     display: flex;
     justify-content: center;
+    margin-bottom: 2.5em;
   }
 
   .products-heading label {
     font-size: 1.5em;
-    padding: 1em 1.125em;
+    padding: 0 1.125em;
     font-weight: 500;
     opacity: 0.5;
     cursor: pointer;
@@ -157,6 +158,14 @@
 @media (min-width: 80em) {
   .products.container {
     padding: 0;
+  }
+
+  .products-heading h2 {
+    margin-bottom: 0.625em;
+  }
+
+  .products-heading [role="radiogroup"] {
+    margin-bottom: 4.875em;
   }
 
   .products-list {
